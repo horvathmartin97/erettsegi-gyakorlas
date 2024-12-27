@@ -141,7 +141,7 @@ for (let i = 0; i < readedData.length; i++) {
     let isIn = false;
     if(userTaxNumber.length !== 0){
         for(let j = 0; j < userTaxNumber.length; j++){
-            if(readedData[i].taxNumber === userTaxNumber[i]){
+            if(readedData[i].taxNumber === userTaxNumber[j]){
                 isIn = true;
             }
         }
