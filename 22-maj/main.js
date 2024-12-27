@@ -83,7 +83,7 @@ let blineCounter = 0;
 let blinePrize = 0;
 let clineCounter = 0;
 let clinePrize = 0;
-for (let i = 0; i < readedData.length; i++) {
+for (let i = 0; i < ado.length; i++) {
     if(ado[i].line === ("A")){
         alinePrize+= ado[i].prize;
         alineCounter++;
