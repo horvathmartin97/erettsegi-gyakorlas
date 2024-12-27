@@ -63,13 +63,19 @@ for (let i = 0; i < readedData.length; i++) {
         });
     }
     if(readedData[i].payLine === "C"){
-        ado.push ({
+      if(Number(lane[2])*Number(readedData[i].baseArea)<10000){
+              ado.push ({
             prize:Number(lane[2]) * Number(readedData[i].baseArea),
             line: readedData[i].payLine,
         });
+      }  else{
+        ado.push({
+            prize:Number(lane[2])*Number(readedData[i].baseArea),
+        });
+      }
+  
     }
-    
-}
+    }
 console.log("5.feladat.");
 let alineCounter = 0;
 let alinePrize = 0;
@@ -88,7 +94,6 @@ for (let i = 0; i < readedData.length; i++) {
         clinePrize+= ado[i].prize;
         clineCounter++;
     }
-    
 }
 console.log(`A sávba ${alineCounter} telek esik, az adó ${alinePrize} Ft`);
 console.log(`B sávba ${blineCounter} telek esik, az adó ${blinePrize} Ft`);
