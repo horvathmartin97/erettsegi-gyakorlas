@@ -123,3 +123,38 @@ console.log(`A több sávba sorolt utcák:`);
 for ( let i = 0; i < dualStreet.length;i++){
     console.log(dualStreet[i]);
 }
+
+// 7.feladat
+
+const userTaxNumber = [];
+const userTaxPrice = [];
+let integratedTax = 0;
+
+for (let i = 0; i < readedData.length; i++) {
+    let holderNumber = readedData[i].taxNumber;
+    let holderTax = ado[i].prize;
+    let isIn = false;
+    if(userTaxNumber.length !== 0){
+        for(let j = 0; j < userTaxNumber.length; j++){
+            if(readedData[i].taxNumber === userTaxNumber[i]){
+                isIn = true;
+            }
+        }
+    }
+    if(isIn === false){
+        for(let j = i+1; j < readedData.length;j++){
+            if(holderNumber === readedData[j].taxNumber){
+                holderTax += ado[i].prize;
+            }
+           
+        }
+        userTaxNumber.push(holderNumber);
+        userTaxPrice.push(holderTax);
+    } 
+}
+let toTxt = "";
+for (let i = 0; i < userTaxNumber.length; i++) {
+    toTxt += userTaxNumber[i]+" "+userTaxPrice[i]+"\n";
+}
+fs.writeFileSync("data/fizetendo.txt",toTxt);
+
