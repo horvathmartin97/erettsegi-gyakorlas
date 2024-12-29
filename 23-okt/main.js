@@ -48,4 +48,4 @@ for (let i = 0; i < readedData.length; i++){
         biggestOrders = readedData[i].numberOfOrder;
     }
 }
-console.log(biggestOrders);
+console.log("A legnagyobb darabszám: " + biggestOrders, );
