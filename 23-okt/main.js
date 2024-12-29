@@ -7,7 +7,7 @@ import input from './utils/input.js';
 //const userInput = await input('Így kérhetsz be adatot a felhasználótól: ');
 
 //console.log(userInput);
-
+console.log("1.feladat");
 const readedData = [];
 const fileData = fs.readFileSync("data/rendel.txt", "utf-8");
 const fileDataArray = fileData.split("\r\n");
@@ -20,16 +20,10 @@ for (let i = 0; i < fileDataArray.length; i++){
             numberOfOrder:row[2],
         })
     }
-
-
 console.log(readedData);
-
 console.log("2.feladat");
-
 console.log(readedData.length);
-
 console.log("3.feladat");
-
 const userInput = await input('Kérem adjon meg egy nap számot: ');
 let orderNumber = [];
 for (let i = 0; i < readedData.length; i++){
@@ -40,22 +34,19 @@ for (let i = 0; i < readedData.length; i++){
 console.log("Rendeleséke száma az adott napon: " + orderNumber.length);
 console.log("4.feladat");
 const noAd = [];
-const isIn = false;
 for(let i = 0; i < readedData.length; i++){
     if(readedData[i].numberOfOrder === 0){
         noAd.push(readedData[i].numberOfOrder); 
     }
-        
     }
     console.log("Minden nap volt rendelés a reklámban nem éríntett városból.");
 console.log(noAd.length);
-/* console.log("5.feladat");
+ console.log("5.feladat");
 const biggestOrders = [];
 const mostOrderDate = [];
 for(let i = 0; i  < readedData.length; i++){
     if(readedData[i].numberOfOrder >= 9){
         biggestOrders.push(readedData[i].numberOfOrder);
     }
-    if(readedData[i].orderDate > )
 }
-console.log(biggestOrders); */
+console.log(biggestOrders);
