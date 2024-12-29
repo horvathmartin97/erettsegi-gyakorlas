@@ -38,15 +38,14 @@ for(let i = 0; i < readedData.length; i++){
     if(readedData[i].numberOfOrder === 0){
         noAd.push(readedData[i].numberOfOrder); 
     }
-    }
-    console.log("Minden nap volt rendelés a reklámban nem éríntett városból.");
-console.log(noAd.length);
- console.log("5.feladat");
-const biggestOrders = [];
-const mostOrderDate = [];
-for(let i = 0; i  < readedData.length; i++){
-    if(readedData[i].numberOfOrder >= 9){
-        biggestOrders.push(readedData[i].numberOfOrder);
+}
+console.log("Minden nap volt rendelés a reklámban nem éríntett városból."); 
+console.log(noAd.length + " nap nem volt a reklámban nem érintett városból rendelés.");
+console.log("5.feladat");
+let biggestOrders = readedData[0].numberOfOrder;
+for (let i = 0; i < readedData.length; i++){
+    if(readedData[i].numberOfOrder > biggestOrders){
+        biggestOrders = readedData[i].numberOfOrder;
     }
 }
 console.log(biggestOrders);
