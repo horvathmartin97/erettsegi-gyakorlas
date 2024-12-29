@@ -48,4 +48,9 @@ for (let i = 0; i < readedData.length; i++){
         biggestOrders = readedData[i].numberOfOrder;
     }
 }
-console.log("A legnagyobb darabszám: " + biggestOrders, );
+let orderDate = " ";
+for (let i = 0; i < readedData.length; i++){
+    if ( biggestOrders === readedData[i].numberOfOrder)
+        orderDate += readedData[i].orderDate+ " ";
+}
+console.log("A legnagyobb darabszám: " + biggestOrders, "a rendelés napja:" + orderDate);
